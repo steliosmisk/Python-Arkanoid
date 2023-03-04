@@ -65,12 +65,14 @@ game_over = False
 while not game_over:
     ball.fill()
     platform.fill()
+
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 move_right = True
             elif event.key == pygame.K_LEFT:
                 move_left = True
+
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 move_right = False
@@ -112,6 +114,4 @@ while not game_over:
             dy *= (-1)
 
     platform.draw()
-    ball.draw()
-    pygame.display.update()
-    clock.tick(40)
+   
